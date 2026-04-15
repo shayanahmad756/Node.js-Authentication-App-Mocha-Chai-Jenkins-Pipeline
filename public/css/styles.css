@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background: #218838;
+  cursor: pointer;
+}
+
+#message {
+  margin-top: 10px;
+  color: red;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
