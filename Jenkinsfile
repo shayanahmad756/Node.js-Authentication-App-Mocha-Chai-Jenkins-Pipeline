@@ -22,7 +22,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing dependencies...'
-                sh 'npm install'
+                bat 'npm install'
                 echo 'Dependencies installed successfully'
             }
         }
@@ -30,7 +30,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 echo 'Running unit tests...'
-                sh 'npm run test:unit'
+                bat 'npm run test:unit'
                 echo 'Unit tests completed'
             }
         }
@@ -38,12 +38,12 @@ pipeline {
         stage('Run Integration Tests') {
             steps {
                 echo 'Starting application for integration tests...'
-                sh 'npm start &'
+                bat 'start /B npm start'
                 echo 'Waiting for application to start...'
-                sh 'sleep 5'
+                bat 'timeout /t 5 /nobreak'
                 
                 echo 'Running integration tests...'
-                sh 'npm run test:integration'
+                bat 'npm run test:integration'
                 echo 'Integration tests completed'
             }
         }
@@ -51,7 +51,7 @@ pipeline {
         stage('Generate Test Reports') {
             steps {
                 echo 'Generating test reports...'
-                sh 'npm run test:report'
+                bat 'npm run test:report'
                 echo 'Test reports generated successfully'
             }
         }
